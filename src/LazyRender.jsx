@@ -134,6 +134,7 @@ var LazyRender = React.createClass({
     var children = childrenToRender.map(function(child, index) {
       if (index === 0) {
         return React.cloneElement(child, Object.assign(
+            {},
             child.props,
             {ref: 'child-' + index, key: index}
         ));
