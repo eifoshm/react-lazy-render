@@ -28,7 +28,7 @@ var LazyRender = React.createClass({displayName: "LazyRender",
   },
 
   onScroll: function() {
-    var container = this.refs.container.getDOMNode();
+    var container = React.findDOMNode(this.refs.container);
     var scrollTop = container.scrollTop;
 
     var childrenTop = Math.floor(scrollTop / this.state.childHeight);
@@ -122,7 +122,7 @@ var LazyRender = React.createClass({displayName: "LazyRender",
 
   getChildHeight: function() {
     var firstChild = this.refs['child-0'];
-    var el = firstChild.getDOMNode();
+    var el = React.findDOMNode(firstChild);
     return this.getElementHeight(el);
   },
 
