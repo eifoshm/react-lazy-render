@@ -9,7 +9,7 @@ var render = require('gulp-render');
 var reactify = require('reactify');
 var reactTools = require('react-tools');
 var connect = require('gulp-connect');
-var sass = require('gulp-sass');
+// var sass = require('gulp-sass');
 var notify = require('gulp-notify');
 var duration = require('gulp-duration');
 var deploy = require('gulp-gh-pages');
@@ -37,11 +37,11 @@ gulp.task('build-example', ['build-js'], function() {
     .pipe(gulp.dest('./example'));
 });
 
-gulp.task('build-example-scss', function() {
-  gulp.src('./example/css/**/*.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('./example/css'));
-});
+// gulp.task('build-example-scss', function() {
+//   gulp.src('./example/css/**/*.scss')
+//     .pipe(sass())
+//     .pipe(gulp.dest('./example/css'));
+// });
 
 gulp.task('watch-example', ['build-js', 'build-example'], function() {
   watch(

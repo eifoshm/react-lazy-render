@@ -1,8 +1,8 @@
 "use strict";
 
-var React = require('react/addons');
+var React = require('react');
 var elementSize = require("element-size");
-var cloneWithProps = React.addons.cloneWithProps;
+var cloneWithProps = require('react-addons-clone-with-props');
 
 var LazyRender = React.createClass({
   propTypes: {
