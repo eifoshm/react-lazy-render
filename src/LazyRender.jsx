@@ -2,7 +2,6 @@
 
 var React = require('react');
 var elementSize = require("element-size");
-var cloneWithProps = require('react-addons-clone-with-props');
 
 var LazyRender = React.createClass({
   propTypes: {
@@ -134,7 +133,10 @@ var LazyRender = React.createClass({
     var childrenToRender = this.props.children.slice(start, end);
     var children = childrenToRender.map(function(child, index) {
       if (index === 0) {
-        return cloneWithProps(child, {ref: 'child-' + index, key: index});
+        return React.cloneElement(child, Object.assign(
+            child.props,
+            {ref: 'child-' + index, key: index}
+        ));
       }
       return child;
     });
